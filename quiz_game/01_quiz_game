@@ -1,0 +1,63 @@
+print("================================")
+print("       PYTHON QUIZ GAME")
+print("================================")
+
+score = 0
+
+questions = [
+    {
+        "question": "What is the capital of India?",
+        "options": ["A. Mumbai", "B. New Delhi", "C. Kolkata", "D. Chennai"],
+        "answer": "B"
+    },
+    {
+        "question": "Which language is used to create Python programs?",
+        "options": ["A. Python", "B. HTML", "C. CSS", "D. SQL"],
+        "answer": "A"
+    },
+    {
+        "question": "What is 5 + 7?",
+        "options": ["A. 10", "B. 11", "C. 12", "D. 13"],
+        "answer": "C"
+    },
+    {
+        "question": "Which keyword is used to define a function in Python?",
+        "options": ["A. function", "B. def", "C. fun", "D. define"],
+        "answer": "B"
+    },
+    {
+        "question": "Which data type stores True or False?",
+        "options": ["A. int", "B. str", "C. bool", "D. list"],
+        "answer": "C"
+    }
+]
+
+for number, question in enumerate(questions, 1):
+    print(f"\nQuestion {number}: {question['question']}")
+
+    for option in question["options"]:
+        print(option)
+
+    answer = input("Enter your answer: ").upper()
+
+    if answer == question["answer"]:
+        print("Correct!")
+        score += 1
+    else:
+        print("Wrong!")
+        print(f"The correct answer is {question['answer']}.")
+
+print("\n================================")
+print("             RESULT")
+print("================================")
+
+print(f"Your score: {score}/{len(questions)}")
+
+if score == len(questions):
+    print("Excellent! Perfect score!")
+elif score >= 3:
+    print("Good job!")
+else:
+    print("Keep practicing!")
+
+print("================================")
